@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDCC2A365FAF00D02112 /* ride_swiftuiApp.swift */; };
-		2192DDCF2A365FAF00D02112 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDCE2A365FAF00D02112 /* ContentView.swift */; };
 		2192DDD12A365FB000D02112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2192DDD02A365FB000D02112 /* Assets.xcassets */; };
 		2192DDD42A365FB000D02112 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2192DDD32A365FB000D02112 /* Preview Assets.xcassets */; };
+		2192DDE32A36613400D02112 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE22A36613400D02112 /* HomeView.swift */; };
+		2192DDE52A3661CC00D02112 /* RideMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE42A3661CC00D02112 /* RideMapViewRepresentable.swift */; };
+		2192DDE72A36668000D02112 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE62A36668000D02112 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2192DDC92A365FAF00D02112 /* ride-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ride-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2192DDCC2A365FAF00D02112 /* ride_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ride_swiftuiApp.swift; sourceTree = "<group>"; };
-		2192DDCE2A365FAF00D02112 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2192DDD02A365FB000D02112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2192DDD32A365FB000D02112 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2192DDE22A36613400D02112 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2192DDE42A3661CC00D02112 /* RideMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideMapViewRepresentable.swift; sourceTree = "<group>"; };
+		2192DDE62A36668000D02112 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,11 @@
 		2192DDCB2A365FAF00D02112 /* ride-swiftui */ = {
 			isa = PBXGroup;
 			children = (
-				2192DDCC2A365FAF00D02112 /* ride_swiftuiApp.swift */,
-				2192DDCE2A365FAF00D02112 /* ContentView.swift */,
+				2192DDDE2A36603C00D02112 /* App */,
+				2192DDDD2A36603900D02112 /* Core */,
+				2192DDDC2A36603500D02112 /* Extentions */,
+				2192DDDB2A36602A00D02112 /* Managers */,
+				2192DDDA2A36602200D02112 /* Models */,
 				2192DDD02A365FB000D02112 /* Assets.xcassets */,
 				2192DDD22A365FB000D02112 /* Preview Content */,
 			);
@@ -65,6 +72,61 @@
 				2192DDD32A365FB000D02112 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2192DDDA2A36602200D02112 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2192DDDB2A36602A00D02112 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2192DDE62A36668000D02112 /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2192DDDC2A36603500D02112 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		2192DDDD2A36603900D02112 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2192DDE12A36610300D02112 /* ViewModel */,
+				2192DDE02A3660F600D02112 /* Views */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2192DDDE2A36603C00D02112 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2192DDCC2A365FAF00D02112 /* ride_swiftuiApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2192DDE02A3660F600D02112 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2192DDE22A36613400D02112 /* HomeView.swift */,
+				2192DDE42A3661CC00D02112 /* RideMapViewRepresentable.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2192DDE12A36610300D02112 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +199,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2192DDCF2A365FAF00D02112 /* ContentView.swift in Sources */,
+				2192DDE72A36668000D02112 /* LocationManager.swift in Sources */,
+				2192DDE32A36613400D02112 /* HomeView.swift in Sources */,
 				2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */,
+				2192DDE52A3661CC00D02112 /* RideMapViewRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +333,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ride-swiftui/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow to access your location to find you ride";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -297,6 +362,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ride-swiftui/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow to access your location to find you ride";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
