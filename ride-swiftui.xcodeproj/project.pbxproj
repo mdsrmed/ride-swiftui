@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		219016022A367E8900AFEC3A /* LocationSearchActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016012A367E8900AFEC3A /* LocationSearchActivationView.swift */; };
+		219016042A36826D00AFEC3A /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016032A36826D00AFEC3A /* MapViewActionButton.swift */; };
+		219016062A36847300AFEC3A /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016052A36847300AFEC3A /* LocationSearchView.swift */; };
+		219016082A368AF800AFEC3A /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016072A368AF800AFEC3A /* LocationSearchResultCell.swift */; };
 		2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDCC2A365FAF00D02112 /* ride_swiftuiApp.swift */; };
 		2192DDD12A365FB000D02112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2192DDD02A365FB000D02112 /* Assets.xcassets */; };
 		2192DDD42A365FB000D02112 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2192DDD32A365FB000D02112 /* Preview Assets.xcassets */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		219016012A367E8900AFEC3A /* LocationSearchActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchActivationView.swift; sourceTree = "<group>"; };
+		219016032A36826D00AFEC3A /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
+		219016052A36847300AFEC3A /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
+		219016072A368AF800AFEC3A /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
 		2192DDC92A365FAF00D02112 /* ride-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ride-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2192DDCC2A365FAF00D02112 /* ride_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ride_swiftuiApp.swift; sourceTree = "<group>"; };
 		2192DDD02A365FB000D02112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +44,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		219015FD2A367DCD00AFEC3A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2192DDE02A3660F600D02112 /* Views */,
+				2192DDE12A36610300D02112 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		219015FE2A367DF700AFEC3A /* LocationSearch */ = {
+			isa = PBXGroup;
+			children = (
+				219016002A367E3100AFEC3A /* Views */,
+				219015FF2A367E1D00AFEC3A /* ViewModel */,
+			);
+			path = LocationSearch;
+			sourceTree = "<group>";
+		};
+		219015FF2A367E1D00AFEC3A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		219016002A367E3100AFEC3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				219016012A367E8900AFEC3A /* LocationSearchActivationView.swift */,
+				219016052A36847300AFEC3A /* LocationSearchView.swift */,
+				219016072A368AF800AFEC3A /* LocationSearchResultCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2192DDC02A365FAE00D02112 = {
 			isa = PBXGroup;
 			children = (
@@ -99,8 +142,8 @@
 		2192DDDD2A36603900D02112 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2192DDE12A36610300D02112 /* ViewModel */,
-				2192DDE02A3660F600D02112 /* Views */,
+				219015FE2A367DF700AFEC3A /* LocationSearch */,
+				219015FD2A367DCD00AFEC3A /* Home */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -118,6 +161,7 @@
 			children = (
 				2192DDE22A36613400D02112 /* HomeView.swift */,
 				2192DDE42A3661CC00D02112 /* RideMapViewRepresentable.swift */,
+				219016032A36826D00AFEC3A /* MapViewActionButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -200,9 +244,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2192DDE72A36668000D02112 /* LocationManager.swift in Sources */,
+				219016062A36847300AFEC3A /* LocationSearchView.swift in Sources */,
+				219016042A36826D00AFEC3A /* MapViewActionButton.swift in Sources */,
 				2192DDE32A36613400D02112 /* HomeView.swift in Sources */,
 				2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */,
 				2192DDE52A3661CC00D02112 /* RideMapViewRepresentable.swift in Sources */,
+				219016022A367E8900AFEC3A /* LocationSearchActivationView.swift in Sources */,
+				219016082A368AF800AFEC3A /* LocationSearchResultCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
