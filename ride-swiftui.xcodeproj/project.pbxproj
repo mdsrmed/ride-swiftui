@@ -17,6 +17,7 @@
 		2192DDE32A36613400D02112 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE22A36613400D02112 /* HomeView.swift */; };
 		2192DDE52A3661CC00D02112 /* RideMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE42A3661CC00D02112 /* RideMapViewRepresentable.swift */; };
 		2192DDE72A36668000D02112 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE62A36668000D02112 /* LocationManager.swift */; };
+		21A22FC12A37DF7B001B30EC /* LocationSearchVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A22FC02A37DF7B001B30EC /* LocationSearchVIewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		2192DDE22A36613400D02112 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2192DDE42A3661CC00D02112 /* RideMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideMapViewRepresentable.swift; sourceTree = "<group>"; };
 		2192DDE62A36668000D02112 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		21A22FC02A37DF7B001B30EC /* LocationSearchVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchVIewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		219015FF2A367E1D00AFEC3A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				21A22FC02A37DF7B001B30EC /* LocationSearchVIewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				2192DDE72A36668000D02112 /* LocationManager.swift in Sources */,
 				219016062A36847300AFEC3A /* LocationSearchView.swift in Sources */,
 				219016042A36826D00AFEC3A /* MapViewActionButton.swift in Sources */,
+				21A22FC12A37DF7B001B30EC /* LocationSearchVIewModel.swift in Sources */,
 				2192DDE32A36613400D02112 /* HomeView.swift in Sources */,
 				2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */,
 				2192DDE52A3661CC00D02112 /* RideMapViewRepresentable.swift in Sources */,
