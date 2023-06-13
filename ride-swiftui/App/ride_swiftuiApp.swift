@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct ride_swiftuiApp: App {
+    @StateObject var locationViewModel = LocationSearchViewModel()
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environmentObject(locationViewModel)
         }
     }
 }
