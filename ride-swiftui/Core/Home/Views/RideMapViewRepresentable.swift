@@ -25,7 +25,7 @@ struct RideMapViewRepresentable: UIViewRepresentable {
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
         if let coordinate = locationViewModel.selectedLocationCoordinate {
-            
+            context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
         }
     }
     
@@ -45,12 +45,24 @@ extension RideMapViewRepresentable {
             super.init()
             
         }
+        //MARK: - MKMapViewDelegate
         
         func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
             let region = MKCoordinateRegion(
                 center: CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude),
                 span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
             parent.mapView.setRegion(region, animated: true)
+        }
+        
+        //MARK: - Helpers
+        
+        func addAndSelectAnnotation(withCoordinate coordinate: CLLocationCoordinate2D){
+            parent.mapView.removeAnnotations(parent.mapView.annotations)
+            let ann = MKPointAnnotation()
+            ann.coordinate = coordinate
+            parent.mapView.addAnnotation(ann)
+            parent.mapView.selectAnnotation(ann, animated: true)
+            parent.mapView.showAnnotations(parent.mapView.annotations, animated: true)
         }
     }
 }
