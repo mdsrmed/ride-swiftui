@@ -36,7 +36,7 @@ class LocationSearchViewModel: NSObject, ObservableObject {
     //MARK: - Helpers
     
     func selectLocation(_ localSearch: MKLocalSearchCompletion){
-        locationSearch(forLocalSearchCompletion: localSearch) { response, error  in
+        locationSearch(forLocalSearchCompletion: localSearch) {[weak self] response, error  in
             if let error = error{
                 print(error.localizedDescription)
                 return
@@ -44,7 +44,7 @@ class LocationSearchViewModel: NSObject, ObservableObject {
             
             guard let item = response?.mapItems.first else{return}
             let coordinate = item.placemark.coordinate
-            self.selectedLocationCoordinate = coordinate
+            self?.selectedLocationCoordinate = coordinate
         }
     }
     
