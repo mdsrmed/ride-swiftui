@@ -12,6 +12,7 @@ struct RideMapViewRepresentable: UIViewRepresentable {
     
     let mapView = MKMapView()
     let locationManager = LocationManager()
+    @Binding var mapState: MapViewState
     @EnvironmentObject var locationViewModel: LocationSearchViewModel
     
     func makeUIView(context: Context) -> some UIView {
@@ -24,10 +25,20 @@ struct RideMapViewRepresentable: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        if let coordinate = locationViewModel.selectedLocationCoordinate {
-            context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
-            context.coordinator.configurePolyline(withDestionCoordinate: coordinate)
+        
+        switch mapState {
+        case .noInput:
+            context.coordinator.clearMapViewAndRecenter()
+            break
+        case .searchingForLocation:
+            break
+        case .locationSelected:
+            if let coordinate = locationViewModel.selectedLocationCoordinate {
+                context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
+                context.coordinator.configurePolyline(withDestionCoordinate: coordinate)
         }
+            break
+       }
     }
     
     func makeCoordinator() -> MapCoordinator {
@@ -40,6 +51,7 @@ extension RideMapViewRepresentable {
     class MapCoordinator: NSObject, MKMapViewDelegate {
         let parent: RideMapViewRepresentable
         var userLocationCoordinate: CLLocationCoordinate2D?
+        var currentRegion: MKCoordinateRegion?
         
         init(parent: RideMapViewRepresentable) {
            
@@ -54,6 +66,7 @@ extension RideMapViewRepresentable {
             let region = MKCoordinateRegion(
                 center: CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude),
                 span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+            self.currentRegion = region
             parent.mapView.setRegion(region, animated: true)
         }
         
@@ -105,6 +118,16 @@ extension RideMapViewRepresentable {
                 
                 
             }
+        }
+        
+        func clearMapViewAndRecenter(){
+            parent.mapView.removeAnnotations(parent.mapView.annotations)
+            parent.mapView.removeOverlays(parent.mapView.overlays)
+            
+            if let currentRegion = currentRegion {
+                parent.mapView.setRegion(currentRegion, animated: true)
+            }
+            
         }
     }
 }

@@ -11,6 +11,7 @@
 		219016042A36826D00AFEC3A /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016032A36826D00AFEC3A /* MapViewActionButton.swift */; };
 		219016062A36847300AFEC3A /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016052A36847300AFEC3A /* LocationSearchView.swift */; };
 		219016082A368AF800AFEC3A /* LocationSearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016072A368AF800AFEC3A /* LocationSearchResultCell.swift */; };
+		2192BF072A392D8A00F27259 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192BF062A392D8A00F27259 /* MapViewState.swift */; };
 		2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDCC2A365FAF00D02112 /* ride_swiftuiApp.swift */; };
 		2192DDD12A365FB000D02112 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2192DDD02A365FB000D02112 /* Assets.xcassets */; };
 		2192DDD42A365FB000D02112 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2192DDD32A365FB000D02112 /* Preview Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		219016032A36826D00AFEC3A /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
 		219016052A36847300AFEC3A /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		219016072A368AF800AFEC3A /* LocationSearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultCell.swift; sourceTree = "<group>"; };
+		2192BF062A392D8A00F27259 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 		2192DDC92A365FAF00D02112 /* ride-swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ride-swiftui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2192DDCC2A365FAF00D02112 /* ride_swiftuiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ride_swiftuiApp.swift; sourceTree = "<group>"; };
 		2192DDD02A365FB000D02112 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		2192DDDA2A36602200D02112 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2192BF062A392D8A00F27259 /* MapViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				2192DDE72A36668000D02112 /* LocationManager.swift in Sources */,
 				219016062A36847300AFEC3A /* LocationSearchView.swift in Sources */,
 				219016042A36826D00AFEC3A /* MapViewActionButton.swift in Sources */,
+				2192BF072A392D8A00F27259 /* MapViewState.swift in Sources */,
 				21A22FC12A37DF7B001B30EC /* LocationSearchVIewModel.swift in Sources */,
 				2192DDE32A36613400D02112 /* HomeView.swift in Sources */,
 				2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */,
