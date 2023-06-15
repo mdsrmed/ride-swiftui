@@ -19,6 +19,7 @@
 		2192DDE52A3661CC00D02112 /* RideMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE42A3661CC00D02112 /* RideMapViewRepresentable.swift */; };
 		2192DDE72A36668000D02112 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE62A36668000D02112 /* LocationManager.swift */; };
 		21A22FC12A37DF7B001B30EC /* LocationSearchVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A22FC02A37DF7B001B30EC /* LocationSearchVIewModel.swift */; };
+		21D364342A3B9DE10029C7C3 /* TripRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D364332A3B9DE10029C7C3 /* TripRequestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		2192DDE42A3661CC00D02112 /* RideMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideMapViewRepresentable.swift; sourceTree = "<group>"; };
 		2192DDE62A36668000D02112 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		21A22FC02A37DF7B001B30EC /* LocationSearchVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchVIewModel.swift; sourceTree = "<group>"; };
+		21D364332A3B9DE10029C7C3 /* TripRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		2192DDDD2A36603900D02112 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				21D364322A3B9DA80029C7C3 /* Trips */,
 				219015FE2A367DF700AFEC3A /* LocationSearch */,
 				219015FD2A367DCD00AFEC3A /* Home */,
 			);
@@ -177,6 +180,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		21D364322A3B9DA80029C7C3 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				21D364332A3B9DE10029C7C3 /* TripRequestView.swift */,
+			);
+			path = Trips;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 				2192DDE52A3661CC00D02112 /* RideMapViewRepresentable.swift in Sources */,
 				219016022A367E8900AFEC3A /* LocationSearchActivationView.swift in Sources */,
 				219016082A368AF800AFEC3A /* LocationSearchResultCell.swift in Sources */,
+				21D364342A3B9DE10029C7C3 /* TripRequestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
