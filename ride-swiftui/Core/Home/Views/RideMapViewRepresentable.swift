@@ -85,7 +85,7 @@ extension RideMapViewRepresentable {
             ann.coordinate = coordinate
             parent.mapView.addAnnotation(ann)
             parent.mapView.selectAnnotation(ann, animated: true)
-            parent.mapView.showAnnotations(parent.mapView.annotations, animated: true)
+            
         }
         
         func configurePolyline(withDestionCoordinate coordinate: CLLocationCoordinate2D){
@@ -93,6 +93,9 @@ extension RideMapViewRepresentable {
             guard let userLocationCoordinate = self.userLocationCoordinate else {return}
             getDestinationRoute(from: userLocationCoordinate, to: coordinate) { [weak self] route in
                 self?.parent.mapView.addOverlay(route.polyline)
+                
+                let rect = self?.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect,edgePadding: .init(top: 64, left: 32, bottom: 500, right: 32))
+                self?.parent.mapView.setRegion(MKCoordinateRegion(rect!), animated: true)
             }
         }
         
