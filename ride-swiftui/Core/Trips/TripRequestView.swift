@@ -10,6 +10,7 @@ import SwiftUI
 struct TripRequestView: View {
     
     @State private var selectedRideType: RideType = .rideX
+    @EnvironmentObject var locationViewModel: LocationSearchViewModel
     
     var body: some View {
         VStack{
@@ -72,7 +73,7 @@ struct TripRequestView: View {
             ScrollView(.horizontal){
                 HStack(spacing: 15){
                     ForEach(RideType.allCases){ type in
-                        VStack(alignment: .leading){
+                        VStack(alignment: .leading,spacing: 1){
                             Image(type.imageName)
                                 .resizable()
                                 .scaledToFit()
@@ -81,9 +82,9 @@ struct TripRequestView: View {
                                 Text(type.description)
                                     .font(.system(size: 14, weight: .semibold))
                                 
-                                Text("$55.00")
+                                Text(locationViewModel.computeTripPrice(forType: type).toCurrency())
                                     .font(.system(size: 14, weight: .semibold))
-                            }.padding(8)
+                            }.padding(10)
                             
                         }
                         .frame(width: 112, height: 140)
