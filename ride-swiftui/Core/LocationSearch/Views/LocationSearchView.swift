@@ -67,6 +67,7 @@ struct LocationSearchView: View {
             
             //mark - list view
         }
+        .background(Color.theme.backgroundColor)
         .background(.white)
     }
 }
