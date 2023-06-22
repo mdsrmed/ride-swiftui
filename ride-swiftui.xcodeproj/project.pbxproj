@@ -21,6 +21,7 @@
 		219927ED2A3FB7D8006BA146 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219927EC2A3FB7D8006BA146 /* RideType.swift */; };
 		219927EF2A3FD2C9006BA146 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219927EE2A3FD2C9006BA146 /* Double.swift */; };
 		21A22FC12A37DF7B001B30EC /* LocationSearchVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A22FC02A37DF7B001B30EC /* LocationSearchVIewModel.swift */; };
+		21AB155A2A44DD06002F090C /* RideLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB15592A44DD06002F090C /* RideLocation.swift */; };
 		21D364342A3B9DE10029C7C3 /* TripRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D364332A3B9DE10029C7C3 /* TripRequestView.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		219927EC2A3FB7D8006BA146 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 		219927EE2A3FD2C9006BA146 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		21A22FC02A37DF7B001B30EC /* LocationSearchVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchVIewModel.swift; sourceTree = "<group>"; };
+		21AB15592A44DD06002F090C /* RideLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLocation.swift; sourceTree = "<group>"; };
 		21D364332A3B9DE10029C7C3 /* TripRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 			children = (
 				2192BF062A392D8A00F27259 /* MapViewState.swift */,
 				219927EC2A3FB7D8006BA146 /* RideType.swift */,
+				21AB15592A44DD06002F090C /* RideLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */,
 				2192DDE52A3661CC00D02112 /* RideMapViewRepresentable.swift in Sources */,
 				219016022A367E8900AFEC3A /* LocationSearchActivationView.swift in Sources */,
+				21AB155A2A44DD06002F090C /* RideLocation.swift in Sources */,
 				219016082A368AF800AFEC3A /* LocationSearchResultCell.swift in Sources */,
 				21D364342A3B9DE10029C7C3 /* TripRequestView.swift in Sources */,
 				219927ED2A3FB7D8006BA146 /* RideType.swift in Sources */,
