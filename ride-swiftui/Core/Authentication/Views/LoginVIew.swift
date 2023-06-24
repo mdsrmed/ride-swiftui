@@ -38,34 +38,12 @@ struct LoginVIew: View {
                 //input fields
                 
                 VStack(spacing: 32) {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Email Address")
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .font(.footnote)
-                        
-                        TextField("name@example.com", text: $email)
-                            .foregroundColor(.green)
-                        
-                        Rectangle()
-                            .foregroundColor(Color(.init(white: 1, alpha: 0.3)))
-                            .frame(width: UIScreen.main.bounds.width - 32, height: 0.7)
-                    }
                     
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Password")
-                            .foregroundColor(.white)
-                            .fontWeight(.semibold)
-                            .font(.footnote)
-                        
-                        TextField("Enter your password", text: $password)
-                            .foregroundColor(.green)
-                            
-                        
-                        Rectangle()
-                            .foregroundColor(Color(.init(white: 1, alpha: 0.3)))
-                            .frame(width: UIScreen.main.bounds.width - 32, height: 0.7)
-                    }
+                    CustomInputField(text: $email, title: "Email Address", placeholder: "name@example.com")
+                    
+                    CustomInputField(text: $password, title: "Password", placeholder: "Enter your password",isSecureField: true)
+                    
+                    
                 }
                 .padding(.horizontal)
                 .padding(.top, 12)

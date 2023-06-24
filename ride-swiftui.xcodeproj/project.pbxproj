@@ -25,6 +25,7 @@
 		21A22FC12A37DF7B001B30EC /* LocationSearchVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A22FC02A37DF7B001B30EC /* LocationSearchVIewModel.swift */; };
 		21AB155A2A44DD06002F090C /* RideLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB15592A44DD06002F090C /* RideLocation.swift */; };
 		21AB155C2A44E8EE002F090C /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB155B2A44E8EE002F090C /* Color.swift */; };
+		21B16A822A47AB72005EC452 /* CustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B16A812A47AB72005EC452 /* CustomInputField.swift */; };
 		21D364342A3B9DE10029C7C3 /* TripRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D364332A3B9DE10029C7C3 /* TripRequestView.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		21A22FC02A37DF7B001B30EC /* LocationSearchVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchVIewModel.swift; sourceTree = "<group>"; };
 		21AB15592A44DD06002F090C /* RideLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLocation.swift; sourceTree = "<group>"; };
 		21AB155B2A44E8EE002F090C /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		21B16A812A47AB72005EC452 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		21D364332A3B9DE10029C7C3 /* TripRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 		2192DDCB2A365FAF00D02112 /* ride-swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				21B16A802A47AB2A005EC452 /* Components */,
 				2192DDDE2A36603C00D02112 /* App */,
 				2192DDDD2A36603900D02112 /* Core */,
 				2192DDDC2A36603500D02112 /* Extentions */,
@@ -224,6 +227,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		21B16A802A47AB2A005EC452 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				21B16A812A47AB72005EC452 /* CustomInputField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		21D364322A3B9DA80029C7C3 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +329,7 @@
 				219016082A368AF800AFEC3A /* LocationSearchResultCell.swift in Sources */,
 				21D364342A3B9DE10029C7C3 /* TripRequestView.swift in Sources */,
 				219F0A292A464F42003A9740 /* LoginVIew.swift in Sources */,
+				21B16A822A47AB72005EC452 /* CustomInputField.swift in Sources */,
 				219927ED2A3FB7D8006BA146 /* RideType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
