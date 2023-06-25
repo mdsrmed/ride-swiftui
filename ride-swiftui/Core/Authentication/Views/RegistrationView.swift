@@ -11,6 +11,7 @@ struct RegistrationView: View {
     @State private var fullname = ""
     @State private var email = ""
     @State private var password = ""
+    @Environment(\.dismiss) private var dismiss
     
     
     var body: some View {
@@ -20,7 +21,7 @@ struct RegistrationView: View {
             
             VStack(alignment: .leading,spacing: 20) {
                 Button {
-                    
+                    dismiss()
                 } label: {
                     Image(systemName: "arrow.left")
                         .font(.title)
@@ -63,7 +64,7 @@ struct RegistrationView: View {
                             
                             
                         }
-                        .frame(width: UIScreen.main.bounds.width-32,height: 50)
+                        .frame(width: UIScreen.main.bounds.width-32,height: 45)
                         .background(.white)
                         .cornerRadius(10)
                         .padding(.vertical)

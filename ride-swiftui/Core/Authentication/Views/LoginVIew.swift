@@ -13,101 +13,108 @@ struct LoginVIew: View {
     @State private var password = ""
     
     var body: some View {
-        ZStack {
-            Color(.black)
-                .ignoresSafeArea()
-            
-            VStack {
-                
-                // image and title
+        NavigationStack {
+            ZStack {
+                Color(.black)
+                    .ignoresSafeArea()
                 
                 VStack {
-                    // image
-                    Image("ride-image")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 150, height: 150)
-                        .cornerRadius(10)
-                        .padding(.top,20)
                     
-                    Text("Ride")
-                        .foregroundColor(.white)
-                        .font(.largeTitle)
-                }
-                
-                //input fields
-                
-                VStack(spacing: 32) {
+                    // image and title
                     
-                    CustomInputField(text: $email, title: "Email Address", placeholder: "name@example.com")
-                    
-                    CustomInputField(text: $password, title: "Password", placeholder: "Enter your password",isSecureField: true)
-                    
-                    
-                }
-                .padding(.horizontal)
-                .padding(.top, 12)
-                
-                
-                Button {
-                    
-                } label: {
-                    Text("Forgot Password?")
-                        .font(.system(size: 13,weight: .semibold))
-                        .foregroundColor(.white)
-                        .padding()
+                    VStack {
+                        // image
+                        Image("ride-image")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 150, height: 150)
+                            .cornerRadius(10)
+                            .padding(.top,20)
                         
-                       
-                       
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding(.vertical)
-
-                
-                //social signin view
-                
-                //sign in button
-                
-                Button {
+                        Text("Ride")
+                            .foregroundColor(.white)
+                            .font(.largeTitle)
+                    }
                     
-                } label: {
-                    HStack {
-                        Text("SIGN IN")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                            .foregroundColor(.black)
+                    //input fields
+                    
+                    VStack(spacing: 32) {
+                        
+                        CustomInputField(text: $email, title: "Email Address", placeholder: "name@example.com")
+                        
+                        CustomInputField(text: $password, title: "Password", placeholder: "Enter your password",isSecureField: true)
+                        
+                        
+                    }
+                    .padding(.horizontal)
+                    .padding(.top, 12)
+                    
+                    
+                    Button {
+                        
+                    } label: {
+                        Text("Forgot Password?")
+                            .font(.system(size: 13,weight: .semibold))
+                            .foregroundColor(.white)
+                            .padding()
                             
-                        
-                        Image(systemName: "arrow.right")
-                            .foregroundColor(.black)
-                            .font(.headline)
-                        
-                        
+                           
+                           
                     }
-                    .frame(width: UIScreen.main.bounds.width-32,height: 50)
-                    .background(.white)
-                    .cornerRadius(10)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.vertical)
-                    .shadow(color: .gray,radius: 5)
-                }
 
-                Spacer()
-                //sign up button
-                
-                Button {
                     
-                } label: {
-                    HStack {
-                        Text("Don't have an account")
-                            .font(.system(size: 14))
+                    //social signin view
+                    
+                    //sign in button
+                    
+                    Button {
                         
-                        Text("Sign Up")
-                            .font(.system(size:14, weight: .semibold))
+                    } label: {
+                        HStack {
+                            Text("SIGN IN")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                
+                            
+                            Image(systemName: "arrow.right")
+                                .foregroundColor(.black)
+                                .font(.headline)
+                            
+                            
+                        }
+                        .frame(width: UIScreen.main.bounds.width-32,height: 45)
+                        .background(.white)
+                        .cornerRadius(10)
+                        .padding(.vertical)
+                        .shadow(color: .gray,radius: 5)
                     }
-                    .foregroundColor(.white)
-                }
-               
 
+                    Spacer()
+                    //sign up button
+                    
+                    NavigationLink {
+                        RegistrationView()
+                            .navigationBarBackButtonHidden(true)
+                    } label: {
+                        HStack {
+                            Text("Don't have an account?")
+                                .font(.system(size: 14))
+                            
+                            Text("Sign Up")
+                                .font(.system(size:14, weight: .semibold))
+                        }
+                        .foregroundColor(.white)
+                        
+                    }
+
+                    
+                
+                   
+
+                }
             }
         }
     }

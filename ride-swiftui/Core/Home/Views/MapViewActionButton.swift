@@ -37,8 +37,7 @@ struct MapViewActionButton: View {
         case .searchingForLocation, .locationSelected, .polylineAdded:
            return "arrow.left"
             
-        default:
-            return "line.3.horizontal"
+        
         
         }
     }
