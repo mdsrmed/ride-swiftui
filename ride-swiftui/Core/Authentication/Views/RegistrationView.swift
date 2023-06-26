@@ -12,6 +12,7 @@ struct RegistrationView: View {
     @State private var email = ""
     @State private var password = ""
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
     
     
     var body: some View {
@@ -49,7 +50,7 @@ struct RegistrationView: View {
                     Spacer()
                     
                     Button {
-                        
+                        viewModel.registerUser(withEmail: email, password: password,fullname: fullname)
                     } label: {
                         HStack {
                             Text("SIGN UP")
