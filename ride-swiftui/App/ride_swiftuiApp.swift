@@ -23,6 +23,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct ride_swiftuiApp: App {
     @StateObject var locationViewModel = LocationSearchViewModel()
+    @StateObject var authViewModel = AuthViewModel()
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     
@@ -30,6 +32,7 @@ struct ride_swiftuiApp: App {
         WindowGroup {
             HomeView()
                 .environmentObject(locationViewModel)
+                .environmentObject(authViewModel)
         }
     }
 }
