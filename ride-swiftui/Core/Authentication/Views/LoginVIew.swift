@@ -11,6 +11,7 @@ struct LoginVIew: View {
     
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         NavigationStack {
@@ -70,7 +71,7 @@ struct LoginVIew: View {
                     //sign in button
                     
                     Button {
-                        
+                        viewModel.signIn(withEmail: email, password: password)
                     } label: {
                         HStack {
                             Text("SIGN IN")

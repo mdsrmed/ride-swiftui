@@ -22,8 +22,32 @@ class AuthViewModel: ObservableObject {
                 return
             }
             
-            print("User id \(result?.user.uid)")
+            //print("User id \(result?.user.uid)")
+            self.userSession = result?.user
             
+        }
+    }
+    
+    func signIn(withEmail email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password){ result,error in
+            
+            if let error = error {
+                print("Failed to sign in with error \(error.localizedDescription)")
+                return
+            }
+            
+            //print("User id \(result?.user.uid)")
+            self.userSession = result?.user
+            
+        }
+    }
+    
+    func signOut(){
+        do {
+            try Auth.auth().signOut()
+            self.userSession = nil
+        } catch let error {
+            print(" Failed to sign out with error: \(error.localizedDescription)")
         }
     }
 }
