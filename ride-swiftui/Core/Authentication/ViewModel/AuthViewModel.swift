@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestoreSwift
 
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
@@ -23,7 +24,13 @@ class AuthViewModel: ObservableObject {
             }
             
             //print("User id \(result?.user.uid)")
-            self.userSession = result?.user
+            guard let firebaseUser = result?.user else {return}
+            self.userSession = firebaseUser
+            
+            let user = User(uid: firebaseUser.uid, fullname: fullname , email: email)
+            guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
+            
+            Firestore.firestore().collection("Users").document(firebaseUser.uid).setData(encodedUser)
             
         }
     }
@@ -37,7 +44,9 @@ class AuthViewModel: ObservableObject {
             }
             
             //print("User id \(result?.user.uid)")
-            self.userSession = result?.user
+            guard let firebaseUser = result?.user else {return}
+            self.userSession = firebaseUser
+            
             
         }
     }

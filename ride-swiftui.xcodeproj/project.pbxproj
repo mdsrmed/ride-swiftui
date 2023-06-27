@@ -32,6 +32,7 @@
 		21B29D842A48EFAD00AD3F5D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 21B29D832A48EFAD00AD3F5D /* FirebaseFirestore */; };
 		21B29D862A48EFAD00AD3F5D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 21B29D852A48EFAD00AD3F5D /* FirebaseFirestoreSwift */; };
 		21B29D882A48EFAD00AD3F5D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 21B29D872A48EFAD00AD3F5D /* FirebaseStorage */; };
+		21B73E162A4B67B800878F21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B73E152A4B67B800878F21 /* User.swift */; };
 		21D364342A3B9DE10029C7C3 /* TripRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D364332A3B9DE10029C7C3 /* TripRequestView.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		21B16A812A47AB72005EC452 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		21B1B8A32A4A41820009E920 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		21B29D7E2A48E72A00AD3F5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		21B73E152A4B67B800878F21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		21D364332A3B9DE10029C7C3 /* TripRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 				2192BF062A392D8A00F27259 /* MapViewState.swift */,
 				219927EC2A3FB7D8006BA146 /* RideType.swift */,
 				21AB15592A44DD06002F090C /* RideLocation.swift */,
+				21B73E152A4B67B800878F21 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				219F0A2B2A464F5E003A9740 /* RegistrationView.swift in Sources */,
 				21B1B8A42A4A41820009E920 /* AuthViewModel.swift in Sources */,
 				21A22FC12A37DF7B001B30EC /* LocationSearchVIewModel.swift in Sources */,
+				21B73E162A4B67B800878F21 /* User.swift in Sources */,
 				2192DDE32A36613400D02112 /* HomeView.swift in Sources */,
 				2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */,
 				21AB155C2A44E8EE002F090C /* Color.swift in Sources */,
