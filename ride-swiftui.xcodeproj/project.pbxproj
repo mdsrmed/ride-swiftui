@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211828A12A4B958A0092A148 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211828A02A4B958A0092A148 /* SideMenuView.swift */; };
+		211828A32A4B9B220092A148 /* SideMenuOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211828A22A4B9B220092A148 /* SideMenuOptionViewModel.swift */; };
+		211828A52A4B9CD90092A148 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211828A42A4B9CD90092A148 /* SideMenuOptionView.swift */; };
 		219016022A367E8900AFEC3A /* LocationSearchActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016012A367E8900AFEC3A /* LocationSearchActivationView.swift */; };
 		219016042A36826D00AFEC3A /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016032A36826D00AFEC3A /* MapViewActionButton.swift */; };
 		219016062A36847300AFEC3A /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016052A36847300AFEC3A /* LocationSearchView.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		211828A02A4B958A0092A148 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		211828A22A4B9B220092A148 /* SideMenuOptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionViewModel.swift; sourceTree = "<group>"; };
+		211828A42A4B9CD90092A148 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
 		219016012A367E8900AFEC3A /* LocationSearchActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchActivationView.swift; sourceTree = "<group>"; };
 		219016032A36826D00AFEC3A /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
 		219016052A36847300AFEC3A /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
@@ -78,6 +84,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2118289D2A4B95390092A148 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				2118289F2A4B95540092A148 /* Views */,
+				2118289E2A4B95480092A148 /* ViewModel */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		2118289E2A4B95480092A148 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				211828A22A4B9B220092A148 /* SideMenuOptionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2118289F2A4B95540092A148 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				211828A02A4B958A0092A148 /* SideMenuView.swift */,
+				211828A42A4B9CD90092A148 /* SideMenuOptionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		219015FD2A367DCD00AFEC3A /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +217,7 @@
 		2192DDDD2A36603900D02112 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2118289D2A4B95390092A148 /* SideMenu */,
 				219F0A242A464EDD003A9740 /* Authentication */,
 				21D364322A3B9DA80029C7C3 /* Trips */,
 				219015FE2A367DF700AFEC3A /* LocationSearch */,
@@ -343,6 +376,7 @@
 				2192DDE72A36668000D02112 /* LocationManager.swift in Sources */,
 				219016062A36847300AFEC3A /* LocationSearchView.swift in Sources */,
 				219016042A36826D00AFEC3A /* MapViewActionButton.swift in Sources */,
+				211828A32A4B9B220092A148 /* SideMenuOptionViewModel.swift in Sources */,
 				2192BF072A392D8A00F27259 /* MapViewState.swift in Sources */,
 				219927EF2A3FD2C9006BA146 /* Double.swift in Sources */,
 				219F0A2B2A464F5E003A9740 /* RegistrationView.swift in Sources */,
@@ -352,9 +386,11 @@
 				2192DDE32A36613400D02112 /* HomeView.swift in Sources */,
 				2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */,
 				21AB155C2A44E8EE002F090C /* Color.swift in Sources */,
+				211828A52A4B9CD90092A148 /* SideMenuOptionView.swift in Sources */,
 				2192DDE52A3661CC00D02112 /* RideMapViewRepresentable.swift in Sources */,
 				219016022A367E8900AFEC3A /* LocationSearchActivationView.swift in Sources */,
 				21AB155A2A44DD06002F090C /* RideLocation.swift in Sources */,
+				211828A12A4B958A0092A148 /* SideMenuView.swift in Sources */,
 				219016082A368AF800AFEC3A /* LocationSearchResultCell.swift in Sources */,
 				21D364342A3B9DE10029C7C3 /* TripRequestView.swift in Sources */,
 				219F0A292A464F42003A9740 /* LoginVIew.swift in Sources */,
