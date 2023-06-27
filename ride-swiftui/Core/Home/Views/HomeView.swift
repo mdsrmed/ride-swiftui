@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var showSideMenu = false
     @State private var showLocationSearchView = false
     @State private var mapState = MapViewState.noInput
     @EnvironmentObject var locationViewModel: LocationSearchViewModel
@@ -16,41 +17,58 @@ struct HomeView: View {
     var body: some View {
         Group {
             if authViewModel.userSession == nil {
-                LoginVIew()
+                LoginView()
+                
             } else {
-                ZStack (alignment: .bottom){
-                    ZStack(alignment: .top){
-                        RideMapViewRepresentable(mapState: $mapState)
-                            .ignoresSafeArea()
-                        
-                        if mapState == .searchingForLocation {
-                            LocationSearchView(mapState: $mapState)
-                        }else if mapState == .noInput {
-                            LocationSearchActivationView()
-                                .padding(.top, 72)
-                                .onTapGesture {
-                                    withAnimation(.spring()){
-                                        mapState = .searchingForLocation
-                                    }
-                                }
+                ZStack {
+                    if showSideMenu {
+                        SideMenuView()
+                    }
+                    mapView
+                        .offset(x: showSideMenu ? 316 : 0)
+                        .shadow(color: showSideMenu ? .black : .clear, radius: 10)
+                }
+                
+                
+            }
+        }
+    }
+}
+
+extension HomeView {
+    var mapView: some View {
+        ZStack (alignment: .bottom){
+            ZStack(alignment: .top){
+                RideMapViewRepresentable(mapState: $mapState)
+                    .ignoresSafeArea()
+                
+                if mapState == .searchingForLocation {
+                    LocationSearchView(mapState: $mapState)
+                }else if mapState == .noInput {
+                    LocationSearchActivationView()
+                        .padding(.top, 72)
+                        .onTapGesture {
+                            withAnimation(.spring()){
+                                mapState = .searchingForLocation
+                            }
                         }
-                        
-                        MapViewActionButton(mapState: $mapState)
-                            .padding(.leading)
-                            .padding(.top, 4)
-                    }
-                    
-                    if mapState == .locationSelected || mapState == .polylineAdded {
-                        TripRequestView()
-                            .transition(.move(edge: .bottom))
-                    }
                 }
-                .edgesIgnoringSafeArea(.bottom)
-                .onReceive(LocationManager.shared.$userLocation) { location in
-                    if let location = location {
-                        locationViewModel.userLocation = location
-                    }
-                }
+                
+                MapViewActionButton(mapState: $mapState,
+                                    showSideMenu: $showSideMenu)
+                .padding(.leading)
+                .padding(.top, 4)
+            }
+            
+            if mapState == .locationSelected || mapState == .polylineAdded {
+                TripRequestView()
+                    .transition(.move(edge: .bottom))
+            }
+        }
+        .edgesIgnoringSafeArea(.bottom)
+        .onReceive(LocationManager.shared.$userLocation) { location in
+            if let location = location {
+                locationViewModel.userLocation = location
             }
         }
     }
@@ -59,5 +77,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(AuthViewModel())
     }
 }

@@ -23,7 +23,7 @@
 		2192DDE72A36668000D02112 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE62A36668000D02112 /* LocationManager.swift */; };
 		219927ED2A3FB7D8006BA146 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219927EC2A3FB7D8006BA146 /* RideType.swift */; };
 		219927EF2A3FD2C9006BA146 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219927EE2A3FD2C9006BA146 /* Double.swift */; };
-		219F0A292A464F42003A9740 /* LoginVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219F0A282A464F42003A9740 /* LoginVIew.swift */; };
+		219F0A292A464F42003A9740 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219F0A282A464F42003A9740 /* LoginView.swift */; };
 		219F0A2B2A464F5E003A9740 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219F0A2A2A464F5E003A9740 /* RegistrationView.swift */; };
 		21A22FC12A37DF7B001B30EC /* LocationSearchVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A22FC02A37DF7B001B30EC /* LocationSearchVIewModel.swift */; };
 		21AB155A2A44DD06002F090C /* RideLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB15592A44DD06002F090C /* RideLocation.swift */; };
@@ -57,7 +57,7 @@
 		2192DDE62A36668000D02112 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		219927EC2A3FB7D8006BA146 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 		219927EE2A3FD2C9006BA146 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
-		219F0A282A464F42003A9740 /* LoginVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVIew.swift; sourceTree = "<group>"; };
+		219F0A282A464F42003A9740 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		219F0A2A2A464F5E003A9740 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		21A22FC02A37DF7B001B30EC /* LocationSearchVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchVIewModel.swift; sourceTree = "<group>"; };
 		21AB15592A44DD06002F090C /* RideLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideLocation.swift; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 		219F0A272A464F1F003A9740 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				219F0A282A464F42003A9740 /* LoginVIew.swift */,
+				219F0A282A464F42003A9740 /* LoginView.swift */,
 				219F0A2A2A464F5E003A9740 /* RegistrationView.swift */,
 			);
 			path = Views;
@@ -393,7 +393,7 @@
 				211828A12A4B958A0092A148 /* SideMenuView.swift in Sources */,
 				219016082A368AF800AFEC3A /* LocationSearchResultCell.swift in Sources */,
 				21D364342A3B9DE10029C7C3 /* TripRequestView.swift in Sources */,
-				219F0A292A464F42003A9740 /* LoginVIew.swift in Sources */,
+				219F0A292A464F42003A9740 /* LoginView.swift in Sources */,
 				21B16A822A47AB72005EC452 /* CustomInputField.swift in Sources */,
 				219927ED2A3FB7D8006BA146 /* RideType.swift in Sources */,
 			);
