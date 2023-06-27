@@ -14,6 +14,7 @@ class AuthViewModel: ObservableObject {
     
     init(){
         userSession = Auth.auth().currentUser
+        fetchUser()
     }
     
     func registerUser(withEmail email: String, password: String, fullname: String){
@@ -57,6 +58,19 @@ class AuthViewModel: ObservableObject {
             self.userSession = nil
         } catch let error {
             print(" Failed to sign out with error: \(error.localizedDescription)")
+        }
+    }
+    
+    func fetchUser(){
+        //guard let uid = self.userSession?.uid else {return}
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, _ in
+            guard let snapshot = snapshot else {return}
+            
+            guard let user = try? snapshot.data(as:User.self) else { return }
+            
+            //print("DEBUG: User is \(user.fullname)")
+            //print("DEBUG: Email is \(user.email)")
         }
     }
 }
