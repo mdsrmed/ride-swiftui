@@ -10,6 +10,7 @@ import SwiftUI
 struct SideMenuView: View {
     //let viewModel: SideMenuOptionViewModel
     var body: some View {
+        
         VStack(spacing: 40){
             //header view
             VStack(alignment: .leading, spacing: 32) {
@@ -23,7 +24,7 @@ struct SideMenuView: View {
                     VStack(alignment: .leading, spacing: 8){
                         Text("MS Rahman")
                             .font(.system(size: 16, weight: .semibold))
-                            
+                        
                         Text("test@gmail.com")
                             .font(.system(size: 14))
                             .accentColor(.black)
@@ -56,15 +57,29 @@ struct SideMenuView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, 16)
             
-            SideMenuOptionView()
-            
-            Spacer()
-            
-            
-            // option list
+            VStack{
+                ForEach(SideMenuOptionViewModel.allCases){ viewModel in
+                    
+                    NavigationLink(value: viewModel) {
+                        SideMenuOptionView(viewModel: viewModel)
+                            .padding()
+                    }
+                    
+                 }
+                }
+                .navigationDestination(for: SideMenuOptionViewModel.self) { viewModel in
+                    Text(viewModel.title)
+                }
+                
+                
+                Spacer()
+                
+                
+                // option list
+            }
+            .padding(.top, 32)
         }
-        .padding(.top, 32)
-    }
+    
 }
 
 struct SideMenuView_Previews: PreviewProvider {

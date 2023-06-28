@@ -8,30 +8,31 @@
 import SwiftUI
 
 struct SideMenuOptionView: View {
-    //let viewModel: SideMenuOptionViewModel
+    let viewModel: SideMenuOptionViewModel
     var body: some View {
-        VStack(spacing: 32) {
-            ForEach(SideMenuOptionViewModel.allCases){ menu in
-                HStack(spacing: 16){
-                    Image(systemName: menu.imageName)
-                        .font(.title2)
-                        .imageScale(.medium)
-                  
-                    
-                    Text(menu.title)
-                        .font(.system(size:16, weight: .semibold))
-                    
-                    Spacer()
-                    
-                }
+        
+            
+                
+                    HStack(spacing: 16){
+                        Image(systemName: viewModel.imageName)
+                            .font(.title2)
+                            .imageScale(.medium)
+                      
+                        
+                        Text(viewModel.title)
+                            .font(.system(size:16, weight: .semibold))
+                        
+                        Spacer()
+                        
+                    }
+                
             }
-        }
-        .padding(.leading)
-    }
+        
+    
 }
 
 struct SideMenuOptionView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuOptionView()
+        SideMenuOptionView(viewModel: .trips)
     }
 }
