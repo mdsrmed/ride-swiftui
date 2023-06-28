@@ -21,6 +21,9 @@
 		2192DDE32A36613400D02112 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE22A36613400D02112 /* HomeView.swift */; };
 		2192DDE52A3661CC00D02112 /* RideMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE42A3661CC00D02112 /* RideMapViewRepresentable.swift */; };
 		2192DDE72A36668000D02112 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2192DDE62A36668000D02112 /* LocationManager.swift */; };
+		219320BD2A4CF6C400D264D4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219320BC2A4CF6C400D264D4 /* SettingsView.swift */; };
+		219320C12A4CFB4000D264D4 /* SavedLocationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219320C02A4CFB4000D264D4 /* SavedLocationRowView.swift */; };
+		219320C32A4CFD9C00D264D4 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219320C22A4CFD9C00D264D4 /* SettingsRowView.swift */; };
 		219927ED2A3FB7D8006BA146 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219927EC2A3FB7D8006BA146 /* RideType.swift */; };
 		219927EF2A3FD2C9006BA146 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219927EE2A3FD2C9006BA146 /* Double.swift */; };
 		219F0A292A464F42003A9740 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219F0A282A464F42003A9740 /* LoginView.swift */; };
@@ -55,6 +58,9 @@
 		2192DDE22A36613400D02112 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		2192DDE42A3661CC00D02112 /* RideMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideMapViewRepresentable.swift; sourceTree = "<group>"; };
 		2192DDE62A36668000D02112 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		219320BC2A4CF6C400D264D4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		219320C02A4CFB4000D264D4 /* SavedLocationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationRowView.swift; sourceTree = "<group>"; };
+		219320C22A4CFD9C00D264D4 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		219927EC2A3FB7D8006BA146 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
 		219927EE2A3FD2C9006BA146 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		219F0A282A464F42003A9740 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 		2192DDDD2A36603900D02112 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				219320BB2A4CF6A000D264D4 /* Settings */,
 				2118289D2A4B95390092A148 /* SideMenu */,
 				219F0A242A464EDD003A9740 /* Authentication */,
 				21D364322A3B9DA80029C7C3 /* Trips */,
@@ -251,6 +258,30 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		219320BB2A4CF6A000D264D4 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				219320BF2A4CF7A200D264D4 /* Views */,
+				219320BE2A4CF79400D264D4 /* ViewModel */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		219320BE2A4CF79400D264D4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		219320BF2A4CF7A200D264D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				219320BC2A4CF6C400D264D4 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		219F0A242A464EDD003A9740 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +312,8 @@
 			isa = PBXGroup;
 			children = (
 				21B16A812A47AB72005EC452 /* CustomInputField.swift */,
+				219320C02A4CFB4000D264D4 /* SavedLocationRowView.swift */,
+				219320C22A4CFD9C00D264D4 /* SettingsRowView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -374,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2192DDE72A36668000D02112 /* LocationManager.swift in Sources */,
+				219320C12A4CFB4000D264D4 /* SavedLocationRowView.swift in Sources */,
 				219016062A36847300AFEC3A /* LocationSearchView.swift in Sources */,
 				219016042A36826D00AFEC3A /* MapViewActionButton.swift in Sources */,
 				211828A32A4B9B220092A148 /* SideMenuOptionViewModel.swift in Sources */,
@@ -382,6 +416,8 @@
 				219F0A2B2A464F5E003A9740 /* RegistrationView.swift in Sources */,
 				21B1B8A42A4A41820009E920 /* AuthViewModel.swift in Sources */,
 				21A22FC12A37DF7B001B30EC /* LocationSearchVIewModel.swift in Sources */,
+				219320C32A4CFD9C00D264D4 /* SettingsRowView.swift in Sources */,
+				219320BD2A4CF6C400D264D4 /* SettingsView.swift in Sources */,
 				21B73E162A4B67B800878F21 /* User.swift in Sources */,
 				2192DDE32A36613400D02112 /* HomeView.swift in Sources */,
 				2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */,
