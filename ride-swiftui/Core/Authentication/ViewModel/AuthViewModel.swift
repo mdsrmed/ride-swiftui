@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
+    @Published var currentUser: User?
     
     init(){
         userSession = Auth.auth().currentUser
@@ -71,6 +72,8 @@ class AuthViewModel: ObservableObject {
             
             //print("DEBUG: User is \(user.fullname)")
             //print("DEBUG: Email is \(user.email)")
+            
+            self.currentUser = user
         }
     }
 }

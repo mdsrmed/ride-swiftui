@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct SideMenuView: View {
-    //let viewModel: SideMenuOptionViewModel
+    private let user: User
+    init(user: User){
+        self.user = user
+    }
+    
     var body: some View {
         
         VStack(spacing: 40){
@@ -22,12 +26,12 @@ struct SideMenuView: View {
                         .frame(width: 64, height: 64)
                     
                     VStack(alignment: .leading, spacing: 8){
-                        Text("MS Rahman")
+                        Text(user.fullname)
                             .font(.system(size: 16, weight: .semibold))
                         
-                        Text("test@gmail.com")
+                        Text(user.email)
                             .font(.system(size: 14))
-                            .accentColor(.black)
+                            .accentColor(Color.theme.primaryTextColor)
                             .opacity(0.77)
                     }
                     
@@ -52,6 +56,7 @@ struct SideMenuView: View {
                         .opacity(0.7)
                         .foregroundColor(Color(.separator))
                         .shadow(color: .black.opacity(0.7), radius:4 )
+                        .padding(.top)
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -84,6 +89,6 @@ struct SideMenuView: View {
 
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuView()
+        SideMenuView(user: User(uid: "1223434", fullname: "Will Smith", email: "ws@gmail.com"))
     }
 }
