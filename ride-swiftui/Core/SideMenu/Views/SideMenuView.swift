@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SideMenuView: View {
-    let viewModel: SideMenuOptionViewModel
+    //let viewModel: SideMenuOptionViewModel
     var body: some View {
         VStack(spacing: 40){
             //header view
@@ -56,7 +56,7 @@ struct SideMenuView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, 16)
             
-            SideMenuOptionView(viewModel: viewModel)
+            SideMenuOptionView()
             
             Spacer()
             
@@ -69,6 +69,6 @@ struct SideMenuView: View {
 
 struct SideMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuView(viewModel: .trips)
+        SideMenuView()
     }
 }

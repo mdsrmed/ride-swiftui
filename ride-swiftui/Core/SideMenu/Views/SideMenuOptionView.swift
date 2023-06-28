@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SideMenuOptionView: View {
-    let viewModel: SideMenuOptionViewModel
+    //let viewModel: SideMenuOptionViewModel
     var body: some View {
         VStack(spacing: 32) {
             ForEach(SideMenuOptionViewModel.allCases){ menu in
@@ -32,6 +32,6 @@ struct SideMenuOptionView: View {
 
 struct SideMenuOptionView_Previews: PreviewProvider {
     static var previews: some View {
-        SideMenuOptionView(viewModel: .trips)
+        SideMenuOptionView()
     }
 }
