@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct SettingsView: View {
+    private let user: User
+    @EnvironmentObject var viewModel: AuthViewModel
+    
+    init(user: User) {
+        self.user = user
+    }
+    
     var body: some View {
         VStack {
             List {
@@ -21,10 +28,10 @@ struct SettingsView: View {
                             .frame(width: 64, height: 64)
                         
                         VStack(alignment: .leading, spacing: 8){
-                            Text("Will Smith")
+                            Text(user.fullname)
                                 .font(.system(size: 16, weight: .semibold))
                             
-                            Text("ws@gmail.com")
+                            Text(user.email)
                                 .font(.system(size: 14))
                                 .accentColor(Color.theme.primaryTextColor)
                                 .opacity(0.77)
@@ -38,6 +45,7 @@ struct SettingsView: View {
                             .foregroundColor(.gray)
                         
                     }
+                    .padding(8)
                 }
                 
                 Section("Favorites") {
@@ -56,15 +64,21 @@ struct SettingsView: View {
                 Section("Account"){
                     SettingsRowView(imageName: "dollarsign.circle.fill", title: "Make Money Driving", tintColor: Color(.systemTeal))
                     SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign Out", tintColor: Color(.systemRed))
+                        .onTapGesture {
+                            viewModel.signOut()
+                        }
                  
                 }
             }
         }
+        .navigationTitle("Settings")
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        NavigationStack{
+            SettingsView(user: User(uid: "1223434", fullname: "Will Smith", email: "ws@gmail.com"))
+        }
     }
 }
