@@ -67,7 +67,7 @@ enum SavedLocationViewModel: Int,CaseIterable,Identifiable {
         
         }
         
-        }
+      
         
     
     }
