@@ -33,6 +33,7 @@ struct SavedLocationSearchView: View {
             LocationSearchResultsView(viewModel: viewModel, config: .saveLocation(config))
         }
         .navigationTitle(config.subtitle)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
