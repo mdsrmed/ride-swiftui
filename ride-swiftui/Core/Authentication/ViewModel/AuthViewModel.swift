@@ -19,6 +19,8 @@ class AuthViewModel: ObservableObject {
     }
     
     func registerUser(withEmail email: String, password: String, fullname: String){
+        guard let location = LocationManager.shared.userLocation else {return}
+        
         Auth.auth().createUser(withEmail: email, password: password){ result, error in
             if let error = error {
                 print("Failed to sign up with error \(error.localizedDescription)")
@@ -29,7 +31,11 @@ class AuthViewModel: ObservableObject {
             guard let firebaseUser = result?.user else {return}
             self.userSession = firebaseUser
             
-            let user = User(uid: firebaseUser.uid, fullname: fullname , email: email, coordinates: GeoPoint(latitude: 40.75, longitude: 73.99), accounttype: .driver)
+            let user = User(uid: firebaseUser.uid,
+                            fullname: fullname ,
+                            email: email,
+                            coordinates: GeoPoint(latitude: location.latitude, longitude: location.longitude),
+                            accounttype: .driver)
             guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
             
             Firestore.firestore().collection("Users").document(firebaseUser.uid).setData(encodedUser)
@@ -48,7 +54,7 @@ class AuthViewModel: ObservableObject {
             //print("User id \(result?.user.uid)")
             guard let firebaseUser = result?.user else {return}
             self.userSession = firebaseUser
-            
+            self.fetchUser()
             
         }
     }
