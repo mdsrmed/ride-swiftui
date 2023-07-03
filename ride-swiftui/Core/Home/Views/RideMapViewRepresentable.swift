@@ -14,6 +14,7 @@ struct RideMapViewRepresentable: UIViewRepresentable {
    
     @Binding var mapState: MapViewState
     @EnvironmentObject var locationViewModel: LocationSearchViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     
     func makeUIView(context: Context) -> some UIView {
         mapView.delegate = context.coordinator
@@ -29,6 +30,7 @@ struct RideMapViewRepresentable: UIViewRepresentable {
         switch mapState {
         case .noInput:
             context.coordinator.clearMapViewAndRecenter()
+            context.coordinator.addDriversToMap(homeViewModel.drivers)
             break
         case .searchingForLocation:
             break
@@ -112,6 +114,17 @@ extension RideMapViewRepresentable {
                 parent.mapView.setRegion(currentRegion, animated: true)
             }
             
+        }
+        
+        func addDriversToMap( _ drivers: [User]){
+            for driver in drivers {
+                let coordinate = CLLocationCoordinate2D(latitude: driver.coordinates.latitude, longitude: driver.coordinates.longitude)
+                let ann = MKPointAnnotation()
+                ann.coordinate = coordinate
+                parent.mapView.addAnnotation(ann)
+              
+                
+            }
         }
     }
 }

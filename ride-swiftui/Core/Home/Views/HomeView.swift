@@ -12,8 +12,8 @@ struct HomeView: View {
     @State private var showLocationSearchView = false
     @State private var mapState = MapViewState.noInput
     @EnvironmentObject var locationViewModel: LocationSearchViewModel
-    @StateObject var homeViewModel = HomeViewModel()
     @EnvironmentObject var authViewModel: AuthViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
         Group {
