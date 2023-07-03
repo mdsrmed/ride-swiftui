@@ -82,6 +82,18 @@ extension RideMapViewRepresentable {
             return polyline
         }
         
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            
+            if let annotation = annotation as? DriverAnnotation {
+                let view = MKAnnotationView(annotation: annotation, reuseIdentifier: "driver")
+                view.image = UIImage(named: "car.circle")
+                return view
+            } else {
+                return nil
+            }
+        
+        }
+        
         //MARK: - Helpers
         
         func addAndSelectAnnotation(withCoordinate coordinate: CLLocationCoordinate2D){
@@ -117,14 +129,9 @@ extension RideMapViewRepresentable {
         }
         
         func addDriversToMap( _ drivers: [User]){
-            for driver in drivers {
-                let coordinate = CLLocationCoordinate2D(latitude: driver.coordinates.latitude, longitude: driver.coordinates.longitude)
-                let ann = MKPointAnnotation()
-                ann.coordinate = coordinate
-                parent.mapView.addAnnotation(ann)
-              
-                
-            }
+            let annotations = drivers.map({DriverAnnotation(driver: $0)})
+            self.parent.mapView.addAnnotations(annotations)
+
         }
     }
 }

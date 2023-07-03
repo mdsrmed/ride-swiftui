@@ -25,6 +25,7 @@
 		219320C12A4CFB4000D264D4 /* SavedLocationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219320C02A4CFB4000D264D4 /* SavedLocationRowView.swift */; };
 		219320C32A4CFD9C00D264D4 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219320C22A4CFD9C00D264D4 /* SettingsRowView.swift */; };
 		2195CCDC2A4E1F810045E26A /* SavedLocatonVeiwModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2195CCDB2A4E1F810045E26A /* SavedLocatonVeiwModel.swift */; };
+		21961E732A53887D008A1279 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21961E722A53887D008A1279 /* DriverAnnotation.swift */; };
 		21981B222A50B21800EEFA1F /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21981B212A50B21800EEFA1F /* DeveloperPreview.swift */; };
 		21981B242A50B96500EEFA1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21981B232A50B96500EEFA1F /* HomeViewModel.swift */; };
 		219927ED2A3FB7D8006BA146 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219927EC2A3FB7D8006BA146 /* RideType.swift */; };
@@ -68,6 +69,7 @@
 		219320C02A4CFB4000D264D4 /* SavedLocationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationRowView.swift; sourceTree = "<group>"; };
 		219320C22A4CFD9C00D264D4 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		2195CCDB2A4E1F810045E26A /* SavedLocatonVeiwModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocatonVeiwModel.swift; sourceTree = "<group>"; };
+		21961E722A53887D008A1279 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		21981B212A50B21800EEFA1F /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
 		21981B232A50B96500EEFA1F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		219927EC2A3FB7D8006BA146 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				21AB15592A44DD06002F090C /* RideLocation.swift */,
 				21B73E152A4B67B800878F21 /* User.swift */,
 				219B8F562A4F9676003307F5 /* SavedLocation.swift */,
+				21961E722A53887D008A1279 /* DriverAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				219927EF2A3FD2C9006BA146 /* Double.swift in Sources */,
 				219F0A2B2A464F5E003A9740 /* RegistrationView.swift in Sources */,
 				2199F2F42A4E684300DD50B1 /* LocationSearchResultsView.swift in Sources */,
+				21961E732A53887D008A1279 /* DriverAnnotation.swift in Sources */,
 				21B1B8A42A4A41820009E920 /* AuthViewModel.swift in Sources */,
 				21A22FC12A37DF7B001B30EC /* LocationSearchVIewModel.swift in Sources */,
 				219320C32A4CFD9C00D264D4 /* SettingsRowView.swift in Sources */,
