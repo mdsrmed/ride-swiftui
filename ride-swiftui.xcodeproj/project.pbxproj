@@ -26,6 +26,7 @@
 		219320C32A4CFD9C00D264D4 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219320C22A4CFD9C00D264D4 /* SettingsRowView.swift */; };
 		2195CCDC2A4E1F810045E26A /* SavedLocatonVeiwModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2195CCDB2A4E1F810045E26A /* SavedLocatonVeiwModel.swift */; };
 		21961E732A53887D008A1279 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21961E722A53887D008A1279 /* DriverAnnotation.swift */; };
+		21961E762A5390FE008A1279 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21961E752A5390FE008A1279 /* UserService.swift */; };
 		21981B222A50B21800EEFA1F /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21981B212A50B21800EEFA1F /* DeveloperPreview.swift */; };
 		21981B242A50B96500EEFA1F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21981B232A50B96500EEFA1F /* HomeViewModel.swift */; };
 		219927ED2A3FB7D8006BA146 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219927EC2A3FB7D8006BA146 /* RideType.swift */; };
@@ -70,6 +71,7 @@
 		219320C22A4CFD9C00D264D4 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		2195CCDB2A4E1F810045E26A /* SavedLocatonVeiwModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocatonVeiwModel.swift; sourceTree = "<group>"; };
 		21961E722A53887D008A1279 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
+		21961E752A5390FE008A1279 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		21981B212A50B21800EEFA1F /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
 		21981B232A50B96500EEFA1F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		219927EC2A3FB7D8006BA146 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		2192DDCB2A365FAF00D02112 /* ride-swiftui */ = {
 			isa = PBXGroup;
 			children = (
+				21961E742A5390D9008A1279 /* Services */,
 				21B16A802A47AB2A005EC452 /* Components */,
 				2192DDDE2A36603C00D02112 /* App */,
 				2192DDDD2A36603900D02112 /* Core */,
@@ -300,6 +303,14 @@
 				219320BC2A4CF6C400D264D4 /* SettingsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		21961E742A5390D9008A1279 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				21961E752A5390FE008A1279 /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		219F0A242A464EDD003A9740 /* Authentication */ = {
@@ -433,6 +444,7 @@
 				21981B242A50B96500EEFA1F /* HomeViewModel.swift in Sources */,
 				219016062A36847300AFEC3A /* LocationSearchView.swift in Sources */,
 				219016042A36826D00AFEC3A /* MapViewActionButton.swift in Sources */,
+				21961E762A5390FE008A1279 /* UserService.swift in Sources */,
 				211828A32A4B9B220092A148 /* SideMenuOptionViewModel.swift in Sources */,
 				2192BF072A392D8A00F27259 /* MapViewState.swift in Sources */,
 				21981B222A50B21800EEFA1F /* DeveloperPreview.swift in Sources */,
