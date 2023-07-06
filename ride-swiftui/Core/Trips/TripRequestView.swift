@@ -10,7 +10,7 @@ import SwiftUI
 struct TripRequestView: View {
     
     @State private var selectedRideType: RideType = .rideX
-    @EnvironmentObject var locationViewModel: LocationSearchViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
         VStack{
@@ -41,14 +41,14 @@ struct TripRequestView: View {
                         
                         Spacer()
                         
-                        Text(locationViewModel.pickupTime ?? "")
+                        Text(homeViewModel.pickupTime ?? "")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.gray)
                     }
                     .padding(.bottom,10)
                     
                     HStack{
-                        if let location = locationViewModel.selectedRideLocation {
+                        if let location = homeViewModel.selectedRideLocation {
                             Text(location.title)
                                 .font(.system(size: 16, weight:  .semibold))
                         }
@@ -56,7 +56,7 @@ struct TripRequestView: View {
                         
                         Spacer()
                         
-                        Text(locationViewModel.dropOffTime ?? "")
+                        Text(homeViewModel.dropOffTime ?? "")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.gray)
                     }
@@ -84,7 +84,7 @@ struct TripRequestView: View {
                                 Text(type.description)
                                     .font(.system(size: 14, weight: .semibold))
                                 
-                                Text(locationViewModel.computeTripPrice(forType: type).toCurrency())
+                                Text(homeViewModel.computeTripPrice(forType: type).toCurrency())
                                     .font(.system(size: 14, weight: .semibold))
                             }.padding(10)
                             

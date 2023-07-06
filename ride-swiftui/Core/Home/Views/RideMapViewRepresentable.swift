@@ -13,7 +13,7 @@ struct RideMapViewRepresentable: UIViewRepresentable {
     let mapView = MKMapView()
    
     @Binding var mapState: MapViewState
-    @EnvironmentObject var locationViewModel: LocationSearchViewModel
+    //@EnvironmentObject var locationViewModel: LocationSearchViewModel
     @EnvironmentObject var homeViewModel: HomeViewModel
     
     func makeUIView(context: Context) -> some UIView {
@@ -35,7 +35,7 @@ struct RideMapViewRepresentable: UIViewRepresentable {
         case .searchingForLocation:
             break
         case .locationSelected:
-            if let coordinate = locationViewModel.selectedRideLocation?.coordinate {
+            if let coordinate = homeViewModel.selectedRideLocation?.coordinate {
                 context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
                 context.coordinator.configurePolyline(withDestionCoordinate: coordinate)
         }
@@ -108,7 +108,7 @@ extension RideMapViewRepresentable {
         func configurePolyline(withDestionCoordinate coordinate: CLLocationCoordinate2D){
             
             guard let userLocationCoordinate = self.userLocationCoordinate else {return}
-            parent.locationViewModel.getDestinationRoute(from: userLocationCoordinate, to: coordinate) { [weak self] route in
+            parent.homeViewModel.getDestinationRoute(from: userLocationCoordinate, to: coordinate) { [weak self] route in
                 self?.parent.mapView.addOverlay(route.polyline)
                 self?.parent.mapState = .polylineAdded
                 let rect = self?.parent.mapView.mapRectThatFits(route.polyline.boundingMapRect,edgePadding: .init(top: 64, left: 32, bottom: 500, right: 32))

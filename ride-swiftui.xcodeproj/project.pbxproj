@@ -10,6 +10,7 @@
 		211828A12A4B958A0092A148 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211828A02A4B958A0092A148 /* SideMenuView.swift */; };
 		211828A32A4B9B220092A148 /* SideMenuOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211828A22A4B9B220092A148 /* SideMenuOptionViewModel.swift */; };
 		211828A52A4B9CD90092A148 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211828A42A4B9CD90092A148 /* SideMenuOptionView.swift */; };
+		218D511A2A5773D700C2E4EA /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 218D51192A5773D700C2E4EA /* Trip.swift */; };
 		219016022A367E8900AFEC3A /* LocationSearchActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016012A367E8900AFEC3A /* LocationSearchActivationView.swift */; };
 		219016042A36826D00AFEC3A /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016032A36826D00AFEC3A /* MapViewActionButton.swift */; };
 		219016062A36847300AFEC3A /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219016052A36847300AFEC3A /* LocationSearchView.swift */; };
@@ -55,6 +56,7 @@
 		211828A02A4B958A0092A148 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		211828A22A4B9B220092A148 /* SideMenuOptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionViewModel.swift; sourceTree = "<group>"; };
 		211828A42A4B9CD90092A148 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
+		218D51192A5773D700C2E4EA /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		219016012A367E8900AFEC3A /* LocationSearchActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchActivationView.swift; sourceTree = "<group>"; };
 		219016032A36826D00AFEC3A /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
 		219016052A36847300AFEC3A /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				21B73E152A4B67B800878F21 /* User.swift */,
 				219B8F562A4F9676003307F5 /* SavedLocation.swift */,
 				21961E722A53887D008A1279 /* DriverAnnotation.swift */,
+				218D51192A5773D700C2E4EA /* Trip.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				21981B222A50B21800EEFA1F /* DeveloperPreview.swift in Sources */,
 				219825A82A5755B800CA3CBF /* AcceptTripVIew.swift in Sources */,
 				2195CCDC2A4E1F810045E26A /* SavedLocatonVeiwModel.swift in Sources */,
+				218D511A2A5773D700C2E4EA /* Trip.swift in Sources */,
 				219927EF2A3FD2C9006BA146 /* Double.swift in Sources */,
 				219F0A2B2A464F5E003A9740 /* RegistrationView.swift in Sources */,
 				2199F2F42A4E684300DD50B1 /* LocationSearchResultsView.swift in Sources */,
