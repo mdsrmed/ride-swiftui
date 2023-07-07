@@ -20,7 +20,7 @@ struct User: Codable {
     var coordinates: GeoPoint
     var homeLocation: SavedLocation?
     var workLocation: SavedLocation?
-    var accounttype: accoutType
+    var accountType: accoutType
     
     
 }

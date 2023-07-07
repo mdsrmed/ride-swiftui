@@ -57,8 +57,13 @@ class HomeViewModel:NSObject, ObservableObject {
         service.$user.sink { user in
             guard let user = user else {return}
             self.currentUser = user
-            guard user.accounttype == .passenger else {return}
-            self.fetchDrivers()
+     
+            
+            if user.accountType == .passenger {
+                self.fetchDrivers()
+            }else {
+                self.fetchTrips()
+            }
         }
         .store(in: &cancellables)
     }
@@ -105,7 +110,18 @@ extension HomeViewModel {
 // Driver Api
 
 extension HomeViewModel {
-    
+    func fetchTrips(){
+        guard let currentUser = currentUser, currentUser.accountType == .driver else { return }
+        Firestore.firestore().collection("trips").whereField("driverUid", isEqualTo: currentUser.uid)
+            .getDocuments { snapshot, _ in
+                guard let documents = snapshot?.documents, let document = documents.first else {return}
+                guard let trip = try?document.data(as: Trip.self) else {return}
+                
+                
+            }
+        
+        
+    }
     
 }
 
@@ -118,7 +134,6 @@ extension HomeViewModel {
                 completion(nil,error)
                 return
             }
-            
             guard let placemark = placemarks?.first else {return}
             completion(placemark, nil)
         }

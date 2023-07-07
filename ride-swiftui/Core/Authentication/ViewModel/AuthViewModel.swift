@@ -38,7 +38,7 @@ class AuthViewModel: ObservableObject {
                             fullname: fullname ,
                             email: email,
                             coordinates: GeoPoint(latitude: location.latitude, longitude: location.longitude),
-                            accounttype: .driver)
+                            accountType: .driver)
             guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
             
             Firestore.firestore().collection("Users").document(firebaseUser.uid).setData(encodedUser)
