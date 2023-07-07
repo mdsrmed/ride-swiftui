@@ -17,8 +17,9 @@ class HomeViewModel:NSObject, ObservableObject {
     
     @Published var drivers = [User]()
     private let service = UserService.shared
-    var currentUser: User?
+   
     private var cancellables = Set<AnyCancellable>()
+    private var currentUser: User?
     
     
     // Location search properties
@@ -63,8 +64,67 @@ class HomeViewModel:NSObject, ObservableObject {
     }
 }
 
+// Passenger Api
+extension HomeViewModel {
+    func requestTrip() {
+        guard let driver = drivers.first else {return}
+        guard let currentUser = currentUser else {return}
+        guard let dropoffLocation = selectedRideLocation else {return}
+        let dropoffGeoPoint = GeoPoint(latitude: dropoffLocation.coordinate.latitude, longitude: dropoffLocation.coordinate.longitude)
+        let userLocation = CLLocation(latitude: currentUser.coordinates.latitude, longitude: currentUser.coordinates.longitude)
+        
+        getPlacemark(forLocation: userLocation) { placemark, _ in
+            guard let placemark = placemark else {return}
+            
+            let trip = Trip(id: NSUUID().uuidString,
+                            passengerUid: currentUser.uid,
+                            driverUid: driver.uid,
+                            passengerName: currentUser.fullname,
+                            driverName: driver.fullname,
+                            passengerLocation: currentUser.coordinates,
+                            driverLocation: driver.coordinates,
+                            pickupLocationName: placemark.name ?? "",
+                            dropoffLocationName: dropoffLocation.title,
+                            pickupLocationAddress: "1 Santa Clara County",
+                            pickupLocation: currentUser.coordinates,
+                            dropoffLocation: dropoffGeoPoint,
+                            tripCost: 55.0)
+            
+            guard let encodedTrip = try? Firestore.Encoder().encode(trip) else {return}
+            Firestore.firestore().collection("trips").document().setData(encodedTrip){ _ in
+                print("DEBUG: Did upload trip to firestore")
+                
+            }
+            
+        }
+        
+    }
+}
+
+
+// Driver Api
 
 extension HomeViewModel {
+    
+    
+}
+
+
+extension HomeViewModel {
+    
+    func getPlacemark(forLocation location: CLLocation, completion: @escaping(CLPlacemark?, Error?) -> Void) {
+        CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
+            if let error = error{
+                completion(nil,error)
+                return
+            }
+            
+            guard let placemark = placemarks?.first else {return}
+            completion(placemark, nil)
+        }
+    }
+    
+    
     func selectLocation(_ localSearch: MKLocalSearchCompletion, config: LocationResultsViewConfig){
         locationSearch(forLocalSearchCompletion: localSearch) {[weak self] response, error  in
             if let error = error{

@@ -134,7 +134,7 @@ struct TripRequestView: View {
             .padding(.horizontal)
             
             Button {
-                
+                homeViewModel.requestTrip()
             } label: {
                 Text("CONFIRM TRIP")
                     .font(.headline)
