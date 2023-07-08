@@ -30,7 +30,9 @@ class DeveloperPreview {
                         pickupLocationAddress: "34 street",
                         pickupLocation: .init(latitude: 37.5, longitude: -127.5),
                         dropoffLocation: .init(latitude: 37.5, longitude: -124.5),
-                        tripCost: 50.55)
+                        tripCost: 50.55,
+                        distanceToPassenger: 500,
+                        travelTimeToPassenger: 30)
     
     let mockUser = User(uid: NSUUID().uuidString,
                         fullname:"Ms Rahman",

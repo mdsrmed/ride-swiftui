@@ -84,6 +84,8 @@ extension HomeViewModel {
         getPlacemark(forLocation: userLocation) { placemark, _ in
             guard let placemark = placemark else {return}
             
+            let tripCost = self.computeTripPrice(forType: .rideX)
+            
             let trip = Trip(id: NSUUID().uuidString,
                             passengerUid: currentUser.uid,
                             driverUid: driver.uid,
@@ -93,10 +95,12 @@ extension HomeViewModel {
                             driverLocation: driver.coordinates,
                             pickupLocationName: placemark.name ?? "",
                             dropoffLocationName: dropoffLocation.title,
-                            pickupLocationAddress: "1 Santa Clara County",
+                            pickupLocationAddress: self.addressFromPlacemark(placemark),
                             pickupLocation: currentUser.coordinates,
                             dropoffLocation: dropoffGeoPoint,
-                            tripCost: 55.0)
+                            tripCost: tripCost,
+                            distanceToPassenger: 0,
+                            travelTimeToPassenger: 0)
             
             guard let encodedTrip = try? Firestore.Encoder().encode(trip) else {return}
             Firestore.firestore().collection("trips").document().setData(encodedTrip){ _ in
@@ -121,16 +125,37 @@ extension HomeViewModel {
                 guard let trip = try?document.data(as: Trip.self) else {return}
                 self.trip = trip
                 
-                
-            }
-        
-        
+                self.getDestinationRoute(from: trip.driverLocation.toCoordinate(), to: trip.pickupLocation.toCoordinate()) { route in
+                    self.trip?.travelTimeToPassenger = Int(route.expectedTravelTime / 60)
+                    self.trip?.distanceToPassenger = route.distance
+                }
+        }
     }
     
 }
 
 
 extension HomeViewModel {
+    
+    func addressFromPlacemark(_ placemark: CLPlacemark) -> String {
+        var result = ""
+        
+        if let thoroughfare = placemark.thoroughfare {
+            result += thoroughfare
+        }
+        
+        if let subthoroughfare = placemark.subThoroughfare {
+            result += " \(subthoroughfare)"
+            
+        }
+        
+        if let subadministrativeArea = placemark.subThoroughfare {
+            result += ", \(subadministrativeArea)"
+        }
+        
+        return result
+    }
+    
     
     func getPlacemark(forLocation location: CLLocation, completion: @escaping(CLPlacemark?, Error?) -> Void) {
         CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
