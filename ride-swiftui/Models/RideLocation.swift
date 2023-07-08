@@ -9,8 +9,8 @@ import Foundation
 import CoreLocation
 
 
-struct RideLocation {
-    
+struct RideLocation: Identifiable {
+    let id = NSUUID().uuidString
     let title: String
     let coordinate: CLLocationCoordinate2D
 }

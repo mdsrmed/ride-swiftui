@@ -28,6 +28,7 @@ class HomeViewModel:NSObject, ObservableObject {
     @Published var selectedRideLocation: RideLocation?
     @Published var pickupTime: String?
     @Published var dropOffTime: String?
+    @Published var trip: Trip?
     private let searchCompleter = MKLocalSearchCompleter()
     var userLocation: CLLocationCoordinate2D?
     var queryFragment: String = ""{
@@ -44,14 +45,7 @@ class HomeViewModel:NSObject, ObservableObject {
         searchCompleter.queryFragment = queryFragment
     }
     
-    func fetchDrivers(){
-        Firestore.firestore().collection("users").whereField("accountType", isEqualTo: accoutType.driver.rawValue)
-            .getDocuments { snapshot , _ in
-                guard let documents = snapshot?.documents else {return}
-                let drivers = documents.compactMap({try?  $0.data(as: User.self)})
-                self.drivers = drivers
-            }
-    }
+    
     
     func fetchUser(){
         service.$user.sink { user in
@@ -71,6 +65,15 @@ class HomeViewModel:NSObject, ObservableObject {
 
 // Passenger Api
 extension HomeViewModel {
+    func fetchDrivers(){
+        Firestore.firestore().collection("users").whereField("accountType", isEqualTo: accoutType.driver.rawValue)
+            .getDocuments { snapshot , _ in
+                guard let documents = snapshot?.documents else {return}
+                let drivers = documents.compactMap({try?  $0.data(as: User.self)})
+                self.drivers = drivers
+            }
+    }
+    
     func requestTrip() {
         guard let driver = drivers.first else {return}
         guard let currentUser = currentUser else {return}
@@ -116,6 +119,7 @@ extension HomeViewModel {
             .getDocuments { snapshot, _ in
                 guard let documents = snapshot?.documents, let document = documents.first else {return}
                 guard let trip = try?document.data(as: Trip.self) else {return}
+                self.trip = trip
                 
                 
             }

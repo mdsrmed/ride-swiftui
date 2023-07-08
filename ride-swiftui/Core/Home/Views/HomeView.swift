@@ -71,6 +71,11 @@ extension HomeView {
                 TripRequestView()
                     .transition(.move(edge: .bottom))
             }
+            
+            if let trip = homeViewModel.trip {
+                AcceptTripVIew(trip: trip)
+                    .transition(.move(edge: .bottom))
+            }
         }
         .edgesIgnoringSafeArea(.bottom)
         .onReceive(LocationManager.shared.$userLocation) { location in
