@@ -18,7 +18,7 @@ extension PreviewProvider {
 class DeveloperPreview {
     static let shared = DeveloperPreview()
     
-    let mockTrip = Trip(id: NSUUID().uuidString,
+    let mockTrip = Trip(
                         passengerUid: NSUUID().uuidString,
                         driverUid: NSUUID().uuidString,
                         passengerName: "Shahid",
@@ -32,7 +32,8 @@ class DeveloperPreview {
                         dropoffLocation: .init(latitude: 37.5, longitude: -124.5),
                         tripCost: 50.55,
                         distanceToPassenger: 500,
-                        travelTimeToPassenger: 30)
+                        travelTimeToPassenger: 30,
+                        state: .rejected)
     
     let mockUser = User(uid: NSUUID().uuidString,
                         fullname:"Ms Rahman",

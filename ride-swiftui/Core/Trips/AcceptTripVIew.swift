@@ -10,6 +10,7 @@ import MapKit
 
 struct AcceptTripVIew: View {
     @State private var region: MKCoordinateRegion
+    @EnvironmentObject var viewModel: HomeViewModel
     let trip: Trip
     let annotationItem: RideLocation
     
@@ -142,7 +143,7 @@ struct AcceptTripVIew: View {
             
             HStack {
                 Button {
-                    
+                    viewModel.rejectTrip()
                 } label: {
                     Text("Reject")
                         .font(.headline)
@@ -157,7 +158,7 @@ struct AcceptTripVIew: View {
                 Spacer()
                 
                 Button {
-                    
+                    viewModel.acceptTrip()
                 } label: {
                     Text("Accept")
                         .font(.headline)
