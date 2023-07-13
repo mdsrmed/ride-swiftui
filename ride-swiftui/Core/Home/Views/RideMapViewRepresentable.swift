@@ -43,6 +43,9 @@ struct RideMapViewRepresentable: UIViewRepresentable {
             
         case .polylineAdded:
             break
+            
+        default :
+            break
        }
     }
     

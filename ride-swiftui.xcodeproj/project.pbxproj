@@ -48,6 +48,8 @@
 		21B29D842A48EFAD00AD3F5D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 21B29D832A48EFAD00AD3F5D /* FirebaseFirestore */; };
 		21B29D862A48EFAD00AD3F5D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 21B29D852A48EFAD00AD3F5D /* FirebaseFirestoreSwift */; };
 		21B29D882A48EFAD00AD3F5D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 21B29D872A48EFAD00AD3F5D /* FirebaseStorage */; };
+		21B5C0782A60C265004FF2FC /* TripLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5C0772A60C265004FF2FC /* TripLoadingView.swift */; };
+		21B5C07A2A60C37B004FF2FC /* TripAcceptedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B5C0792A60C37B004FF2FC /* TripAcceptedView.swift */; };
 		21B73E162A4B67B800878F21 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B73E152A4B67B800878F21 /* User.swift */; };
 		21D364342A3B9DE10029C7C3 /* TripRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D364332A3B9DE10029C7C3 /* TripRequestView.swift */; };
 		21E29B992A4E503200676B83 /* SavedLocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E29B982A4E503200676B83 /* SavedLocationSearchView.swift */; };
@@ -92,6 +94,8 @@
 		21B16A812A47AB72005EC452 /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		21B1B8A32A4A41820009E920 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		21B29D7E2A48E72A00AD3F5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		21B5C0772A60C265004FF2FC /* TripLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLoadingView.swift; sourceTree = "<group>"; };
+		21B5C0792A60C37B004FF2FC /* TripAcceptedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripAcceptedView.swift; sourceTree = "<group>"; };
 		21B73E152A4B67B800878F21 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		21D364332A3B9DE10029C7C3 /* TripRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRequestView.swift; sourceTree = "<group>"; };
 		21E29B982A4E503200676B83 /* SavedLocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationSearchView.swift; sourceTree = "<group>"; };
@@ -363,6 +367,8 @@
 			children = (
 				21D364332A3B9DE10029C7C3 /* TripRequestView.swift */,
 				219825A72A5755B800CA3CBF /* AcceptTripVIew.swift */,
+				21B5C0772A60C265004FF2FC /* TripLoadingView.swift */,
+				21B5C0792A60C37B004FF2FC /* TripAcceptedView.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				21E29B992A4E503200676B83 /* SavedLocationSearchView.swift in Sources */,
 				219320C12A4CFB4000D264D4 /* SavedLocationRowView.swift in Sources */,
 				21981B242A50B96500EEFA1F /* HomeViewModel.swift in Sources */,
+				21B5C0782A60C265004FF2FC /* TripLoadingView.swift in Sources */,
 				219016062A36847300AFEC3A /* LocationSearchView.swift in Sources */,
 				219016042A36826D00AFEC3A /* MapViewActionButton.swift in Sources */,
 				219F6CE42A59F4ED00806501 /* GeoPoint.swift in Sources */,
@@ -472,6 +479,7 @@
 				21B73E162A4B67B800878F21 /* User.swift in Sources */,
 				219B8F572A4F9676003307F5 /* SavedLocation.swift in Sources */,
 				2192DDE32A36613400D02112 /* HomeView.swift in Sources */,
+				21B5C07A2A60C37B004FF2FC /* TripAcceptedView.swift in Sources */,
 				2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */,
 				21AB155C2A44E8EE002F090C /* Color.swift in Sources */,
 				211828A52A4B9CD90092A148 /* SideMenuOptionView.swift in Sources */,
