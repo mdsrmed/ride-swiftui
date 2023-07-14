@@ -146,9 +146,6 @@ struct TripRequestView: View {
                     .padding(.horizontal)
             }
 
-            
-            
-            
         }
         .padding(.bottom,24)
         .background(Color.theme.backgroundColor)
