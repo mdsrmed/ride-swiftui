@@ -8,89 +8,97 @@
 import SwiftUI
 
 struct TripAcceptedView: View {
+    
+    @EnvironmentObject var viewModel: HomeViewModel
+    
     var body: some View {
         VStack {
             Capsule()
                 .foregroundColor(Color(.systemGray5))
                 .frame(width: 48, height: 6)
                 .padding(.top, 8)
-            VStack {
-                HStack {
-                    Text("Meet your driver at Parkchester for your trip to Manhattan")
-                        .font(.body)
-                        .frame(height: 44)
-                        .lineLimit(2)
-                        .padding(.trailing)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        Text("10")
-                            .bold()
-                        
-                        Text("min")
-                            .bold()
-                    }
-                    .frame(width: 56, height: 56)
-                    .foregroundColor(.white)
-                    .background(Color(.systemBlue))
-                    .cornerRadius(10)
-                }
-                .padding()
-                
-                Divider()
-            }
             
-            VStack {
-                HStack {
-                    Image("profile-image")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 80, height: 80)
-                        .clipShape(Circle())
-                    
-                    VStack(alignment: .leading,spacing: 4) {
-                        Text("John Doe")
-                            .fontWeight(.bold)
+            if let trip = viewModel.trip {
+                VStack {
+                    HStack {
+                        Text("Meet your driver at \(trip.pickupLocationName) for your trip to \(trip.dropoffLocationName)")
+                            .font(.body)
+                            .frame(height: 44)
+                            .lineLimit(2)
+                            .padding(.trailing)
                         
-                        HStack {
-                            Image(systemName: "star.fill")
-                                .foregroundColor(Color(.systemYellow))
-                                .imageScale(.small)
+                        Spacer()
+                        
+                        VStack {
+                            Text("\trip.travelTimeToPassenger")
+                                .bold()
                             
-                            Text("4.9")
-                                .font(.footnote)
-                                .foregroundColor(.gray)
+                            Text("min")
+                                .bold()
                         }
+                        .frame(width: 56, height: 56)
+                        .foregroundColor(.white)
+                        .background(Color(.systemBlue))
+                        .cornerRadius(10)
                     }
+                    .padding()
                     
-                    Spacer()
-                    
-                    // Ride info
-                    
-                    VStack(alignment: .center){
-                        Image("ride-x")
+                    Divider()
+                }
+                
+                VStack {
+                    HStack {
+                        Image("profile-image")
                             .resizable()
                             .scaledToFill()
-                            .frame(width: 120, height: 64)
+                            .frame(width: 80, height: 80)
+                            .clipShape(Circle())
                         
-                        HStack {
-                            Text("Lexus-RX")
-                                .font(.system(size: 14, weight: .semibold))
-                                .foregroundColor(.gray)
+                        VStack(alignment: .leading,spacing: 4) {
+                            Text(trip.driverName)
+                                .fontWeight(.bold)
                             
-                            Text("7NYCUS")
-                                .font(.system(size: 14, weight: .semibold))
+                            HStack {
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(Color(.systemYellow))
+                                    .imageScale(.small)
+                                
+                                Text("4.9")
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
+                            }
                         }
-                        .frame(width: 160)
-                        .padding(.bottom)
+                        
+                        Spacer()
+                        
+                        // Ride info
+                        
+                        VStack(alignment: .center){
+                            Image("ride-x")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 120, height: 64)
+                            
+                            HStack {
+                                Text("Lexus-RX")
+                                    .font(.system(size: 14, weight: .semibold))
+                                    .foregroundColor(.gray)
+                                
+                                Text("7NYCUS")
+                                    .font(.system(size: 14, weight: .semibold))
+                            }
+                            .frame(width: 160)
+                            .padding(.bottom)
+                        }
+                        
                     }
-                    
+                
+                    Divider()
                 }
-            
-                Divider()
+                .padding()
             }
-            .padding()
+            
+            
             
             Button {
               
