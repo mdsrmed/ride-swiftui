@@ -83,8 +83,15 @@ extension HomeView {
                     }
                 } else {
                     if let trip = homeViewModel.trip {
-                        AcceptTripVIew(trip: trip)
-                            .transition(.move(edge: .bottom))
+                        if mapState == .tripRequested {
+                            AcceptTripVIew(trip: trip)
+                                .transition(.move(edge: .bottom))
+                        } else if mapState == .tripAccepted {
+                            PickupPassengerView(trip:trip)
+                                .transition(.move(edge: .bottom))
+                        }
+                        
+                       
                 }
             }
 
