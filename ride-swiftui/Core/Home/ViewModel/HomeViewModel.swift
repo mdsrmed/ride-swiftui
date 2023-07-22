@@ -13,11 +13,11 @@ import Combine
 import MapKit
 
 
-class HomeViewModel:NSObject, ObservableObject {
+class HomeViewModel:NSObject, ObservableObject, MKLocalSearchCompleterDelegate {
     
     @Published var drivers = [User]()
     private let service = UserService.shared
-   
+    
     private var cancellables = Set<AnyCancellable>()
     var currentUser: User?
     var routeToPickupLocation: MKRoute?
@@ -36,81 +36,111 @@ class HomeViewModel:NSObject, ObservableObject {
             searchCompleter.queryFragment = queryFragment
         }
     }
-   
+    
     
     override init(){
         super.init()
-        self.fetchDrivers()
+        self.fetchUser()
         searchCompleter.delegate = self
         searchCompleter.queryFragment = queryFragment
     }
     
-    
+
     // Mark: Helpers
     
-    func viewForState( _ state: MapViewState, user: User) -> some View {
-        switch state {
-        case .polylineAdded, .locationSelected:
-            return AnyView(TripRequestView())
-       
-        case .tripRequested:
-            if user.accountType == .passenger {
-                return AnyView(TripLoadingView())
-            } else {
-                if let trip = self.trip {
-                    return AnyView(AcceptTripVIew(trip: trip))
+    var tripCancelledMessage: String{
+        guard let user = currentUser, let trip = trip else { return "" }
+        
+        if user.accountType == .passenger {
+            if trip.state == .driverCancelled {
+                return "Driver cancelled this trip"
+            } else if trip.state == .passengerCancelled {
+                return "Your trip has been cancelled"
+            }
+        } else {
+            if user.accountType == .driver {
+                if trip.state == .passengerCancelled {
+                    return "Passenger cancelled this trip"
+                } else if trip.state == .driverCancelled {
+                    return "Your trip has been cancelled"
                 }
             }
-        case .tripAccepted:
-            if user.accountType == .passenger {
-                return AnyView(TripLoadingView())
-            } else {
-                if let trip = self.trip {
-                    return AnyView(PickupPassengerView(trip: trip))
+        }
+            return ""
+        }
+        
+        func viewForState( _ state: MapViewState, user: User) -> some View {
+            switch state {
+            case .polylineAdded, .locationSelected:
+                return AnyView(TripRequestView())
+                
+            case .tripRequested:
+                if user.accountType == .passenger {
+                    return AnyView(TripLoadingView())
+                } else {
+                    if let trip = self.trip {
+                        return AnyView(AcceptTripVIew(trip: trip))
+                    }
                 }
-               
+            case .tripAccepted:
+                if user.accountType == .passenger {
+                    return AnyView(TripLoadingView())
+                } else {
+                    if let trip = self.trip {
+                        return AnyView(PickupPassengerView(trip: trip))
+                    }
+                    
+                }
+            case .tripCancelledByPassenger, .tripCancelledByDriver:
+                return  AnyView(TripCancelledView())
+                
+                
+            default:
+                break
             }
-        case .tripCancelledByPassenger:
-            return  AnyView(Text("Trip cancelld by passenger"))
-        case .tripCancelledByDriver:
-            return AnyView(Text("Trip cancelld by driver"))
-            
-        default:
-            break
-        }
-        return AnyView(Text(""))
-    }
-    
-    
-    func fetchUser(){
-        service.$user.sink { user in
-            guard let user = user else {return}
-            self.currentUser = user
-     
-            
-            if user.accountType == .passenger {
-                self.fetchDrivers()
-                self.addTripObserverForPassenger()
-            }else {
-                self.addTripObserverForDriver()
-            }
-        }
-        .store(in: &cancellables)
-    }
-    
-    private func updateTripState(state: TripState){
-        
-        guard let trip = trip else {return}
-        var data = ["state": state.rawValue]
-        if state == .accepted {
-            data["travelTimeToPassenger"] = trip.travelTimeToPassenger
+            return AnyView(Text(""))
         }
         
-        Firestore.firestore().collection("trips").document(trip.id).updateData(data) { _ in
-            print("DEBUG: Did update trip with state \(state)")
+        
+        func fetchUser(){
+            service.$user.sink { user in
+                guard let user = user else {return}
+                self.currentUser = user
+                
+                
+                if user.accountType == .passenger {
+                    self.fetchDrivers()
+                    self.addTripObserverForPassenger()
+                }else {
+                    self.addTripObserverForDriver()
+                }
+            }
+            .store(in: &cancellables)
+        }
+        
+        private func updateTripState(state: TripState){
+            
+            guard let trip = trip else {return}
+            var data = ["state": state.rawValue]
+            if state == .accepted {
+                data["travelTimeToPassenger"] = trip.travelTimeToPassenger
+            }
+            
+            Firestore.firestore().collection("trips").document(trip.id).updateData(data) { _ in
+                print("DEBUG: Did update trip with state \(state)")
+                
+            }
+        }
+        
+        func deleteTrip(){
+            
+            guard let trip = trip else {return}
+            Firestore.firestore().collection("trips").document(trip.id).delete{ _ in
+                self.trip = nil
+            }
             
         }
-    }
+    
 }
 
 // Passenger Api
@@ -346,7 +376,7 @@ extension HomeViewModel {
     }
 }
 
-extension HomeViewModel: MKLocalSearchCompleterDelegate {
+extension HomeViewModel {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         self.results = completer.results
     }

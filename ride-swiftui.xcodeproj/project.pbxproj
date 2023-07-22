@@ -26,6 +26,7 @@
 		219320C12A4CFB4000D264D4 /* SavedLocationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219320C02A4CFB4000D264D4 /* SavedLocationRowView.swift */; };
 		219320C32A4CFD9C00D264D4 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219320C22A4CFD9C00D264D4 /* SettingsRowView.swift */; };
 		2195CCDC2A4E1F810045E26A /* SavedLocatonVeiwModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2195CCDB2A4E1F810045E26A /* SavedLocatonVeiwModel.swift */; };
+		219604522A6C658D00064916 /* TripCancelledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 219604512A6C658D00064916 /* TripCancelledView.swift */; };
 		21961E732A53887D008A1279 /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21961E722A53887D008A1279 /* DriverAnnotation.swift */; };
 		21961E762A5390FE008A1279 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21961E752A5390FE008A1279 /* UserService.swift */; };
 		21981B222A50B21800EEFA1F /* DeveloperPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21981B212A50B21800EEFA1F /* DeveloperPreview.swift */; };
@@ -78,6 +79,7 @@
 		219320C02A4CFB4000D264D4 /* SavedLocationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationRowView.swift; sourceTree = "<group>"; };
 		219320C22A4CFD9C00D264D4 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		2195CCDB2A4E1F810045E26A /* SavedLocatonVeiwModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocatonVeiwModel.swift; sourceTree = "<group>"; };
+		219604512A6C658D00064916 /* TripCancelledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCancelledView.swift; sourceTree = "<group>"; };
 		21961E722A53887D008A1279 /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		21961E752A5390FE008A1279 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		21981B212A50B21800EEFA1F /* DeveloperPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperPreview.swift; sourceTree = "<group>"; };
@@ -321,6 +323,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		219604502A6C654800064916 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				219604512A6C658D00064916 /* TripCancelledView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		21961E742A5390D9008A1279 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +399,7 @@
 		21D364322A3B9DA80029C7C3 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
+				219604502A6C654800064916 /* Shared */,
 				219879342A6603A7009DB9F8 /* Passengers */,
 				219879332A660394009DB9F8 /* Drivers */,
 			);
@@ -502,6 +513,7 @@
 				219B8F572A4F9676003307F5 /* SavedLocation.swift in Sources */,
 				2192DDE32A36613400D02112 /* HomeView.swift in Sources */,
 				219879362A6603F7009DB9F8 /* PickupPassengerView.swift in Sources */,
+				219604522A6C658D00064916 /* TripCancelledView.swift in Sources */,
 				21B5C07A2A60C37B004FF2FC /* TripAcceptedView.swift in Sources */,
 				2192DDCD2A365FAF00D02112 /* ride_swiftuiApp.swift in Sources */,
 				21AB155C2A44E8EE002F090C /* Color.swift in Sources */,
